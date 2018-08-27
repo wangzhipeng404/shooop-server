@@ -28,11 +28,11 @@ const add = data => {
   return new Order(data).save()
 }
 
-const get =  id => {
+const get = id => {
   return Order.findById(id).exec()
 }
 
-const find =  ({ filters = {}, sort = { id: -1 }, skip = 0, limit = 10 }) => {
+const find =  ({ filters = {}, sort = { _id: -1 }, skip = 0, limit = 10 }) => {
   return Order.find(filters).sort(sort).skip(skip).limit(limit).exec()
 }
 
