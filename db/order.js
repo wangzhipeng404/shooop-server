@@ -40,8 +40,8 @@ const count = filters => {
   return Order.count(filters).exec()
 }
 
-const update = ({ filters , data }) => {
-  return Order.findOneAndUpdate(filters, data).exec()
+const update = ({ id , data }) => {
+  return Order.findByIdAndUpdate(id, data).exec()
 }
 const ORDER = {
   add,

@@ -17,6 +17,17 @@ const add = async query => {
   return new Promise(resove => resove(orderNew))
 }
 
+const send = async query => {
+  const data = {
+    express_image: query.express_image,
+    express_no: query.express_no,
+    express_name: query.express_name,
+    state: 'SENDING',
+  }
+  return ORDER.update({ id: query.id, data })
+}
+
 module.exports = {
   add,
+  send,
 }
