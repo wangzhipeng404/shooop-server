@@ -79,4 +79,14 @@ router.post('/order/send', async function (ctx, next) {
   }
 })
 
+router.get('/order/finish', async function (ctx, next) {
+  const res = await ORDER.update({ 
+    id: ctx.query.id,
+    data: {
+      state: 'FINISH',
+    }
+  })
+  ctx.body = res
+})
+
 module.exports = router
